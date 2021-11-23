@@ -2,6 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
+
 // importaciones a servicios propios
 const user = require('./services/user')
 const routes = require('./endpoints')
