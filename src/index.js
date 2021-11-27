@@ -1,17 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
-<<<<<<< HEAD
-
-
-// importaciones a servicios propios
-const user = require('./services/user')
-const routes = require('./endpoints')
-const bodyParser = require('body-parser')
-=======
 const {ApolloServer} = require("apollo-server-express")
 const {resolvers} = require('./resolvers')
 const {types} = require('./types')
->>>>>>> main
 
 
 const app = express()
