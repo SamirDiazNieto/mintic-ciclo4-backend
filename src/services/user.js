@@ -20,7 +20,14 @@ updateUser = async (userId, user)=>{
     let new_user = User.findByIdAndUpdate(userId, user,{new:true})
     return new_user
 }
-
+UpdateUserInsc = async(userId, projectId)=>{
+    let user = await User.findByIdAndUpdate(userId,{
+        $push:{
+            projects:projectId
+        }
+    })
+    return user
+}
 UpdateProject = async(userId, projectId)=>{
     let user = await User.findByIdAndUpdate(userId,{
         $push:{

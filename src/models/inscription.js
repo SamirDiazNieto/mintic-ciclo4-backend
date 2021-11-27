@@ -5,10 +5,12 @@ const Project = require('./project')
 
 const InscriptionSchema = new  Schema({
     project:{
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: "Project"
     },
     student:{
-        type: String
+        type: Schema.Types.ObjectId,
+        ref: "User"
     },
     state:{
         type: String
@@ -17,8 +19,7 @@ const InscriptionSchema = new  Schema({
         type: String
     },
     dateOut: {
-        type: String,
-        
+        type: String
     }
 })
 

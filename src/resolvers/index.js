@@ -1,6 +1,6 @@
 const {projectResolvers} = require('./project')
 const {userResolvers} = require('./user')
-
-const resolvers = [projectResolvers, userResolvers]
+const {inscriptionResolvers}= require('./inscription')
+const resolvers = [projectResolvers, userResolvers,inscriptionResolvers]
 
 module.exports = {resolvers}

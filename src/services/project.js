@@ -19,7 +19,7 @@ getProjectById = async (projectId) => {
 }
 
 updateProject = async (projectId, project) => {
-    newProject = await Project.findByIdAndUpdate(projectId, project, { new: true })
+    let newProject = await Project.findByIdAndUpdate(projectId, project, { new: true })
     return newProject
 }
 
