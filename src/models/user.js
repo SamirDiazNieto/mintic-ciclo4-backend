@@ -1,23 +1,38 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const Project = require('./project')
 
-const userSchema = new Schema({
-    name:{
+const UserSchema = new Schema({
+    name: {
         type: String,
-        required: false,
-        default: "N.N"
+        required: false
     },
-    lastName:{
-        type:String
+    lastName: {
+        type: String
     },
     email:{
         type: String,
         required: true
     },
-    password:{
+    identifcation:{
+        type: String,
+    },
+    password: {
         type: String,
         required: true
-    }
+    },
+    rol:{
+        type: String,
+        required: true
+    },
+    estado:{
+        type: String,
+        required: true
+    },
+    projects:[{
+        type: Schema.Types.ObjectId,
+        ref: "Project"
+    }]
 })
 
-module.exports = mongoose.model("User",userSchema)
+module.exports = mongoose.model("User",UserSchema)
