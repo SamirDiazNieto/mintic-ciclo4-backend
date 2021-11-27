@@ -10,22 +10,14 @@ const UserSchema = new Schema({
     lastName: {
         type: String
     },
+    phone: {
+        type: String
+    },
     email:{
         type: String,
         required: true
     },
-    identifcation:{
-        type: String,
-    },
     password: {
-        type: String,
-        required: true
-    },
-    rol:{
-        type: String,
-        required: true
-    },
-    estado:{
         type: String,
         required: true
     },

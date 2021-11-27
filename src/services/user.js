@@ -29,24 +29,11 @@ UpdateProject = async(userId, projectId)=>{
     })
     return user
 }
-deleteUser= async(userId)=>{
-    await User.findByIdAndDelete(userId,{
-        function (err, docs) {
-            if (err){
-                console.log(err)
-            }
-            else{
-                console.log("Deleted : ", docs);
-            }
-        }
-    }
-        )
-}
 
 module.exports = {
     createUser,
     getUsers,
     getUserById,
     updateUser,
-    UpdateProject, deleteUser
+    UpdateProject
 }

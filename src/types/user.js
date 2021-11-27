@@ -38,7 +38,6 @@ const userType = gql`
             email: String!
             password: String!
         ): User
-        deleteUser(_id:ID!):User
     }
 `;
 

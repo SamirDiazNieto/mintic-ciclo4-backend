@@ -12,8 +12,7 @@ const server = new ApolloServer({
 })
 
 
-
-mongoose.connect("mongodb+srv://jeep2198:jeep2198@cluster0.2edvy.mongodb.net/ModuleProjets", async()=>{
+mongoose.connect("mongodb+srv://root:root@cluster0.cpoyt.mongodb.net/graphi", async()=>{
     console.log("conexión a bd exitosa");
     app.listen(5010, async()=>{
         await server.start()
