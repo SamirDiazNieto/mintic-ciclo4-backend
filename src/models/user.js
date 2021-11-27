@@ -21,6 +21,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    estado: {
+        type: String,
+        enum: ["Pendiente", "Autorizado", "No Autorizado"],
+        default:'Pendiente'
+    },
     projects:[{
         type: Schema.Types.ObjectId,
         ref: "Project"
