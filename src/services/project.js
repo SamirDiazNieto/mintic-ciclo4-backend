@@ -23,9 +23,24 @@ updateProject = async (projectId, project) => {
     return newProject
 }
 
+deleteProject= async(projectId)=>{
+    await Project.findByIdAndDelete(projectId,{
+        function (err, docs) {
+            if (err){
+                console.log(err)
+            }
+            else{
+                console.log("Deleted : ", docs);
+            }
+        }
+    }
+        )
+}
+
 module.exports = {
     createProject,
     getProjects,
     getProjectById,
-    updateProject
+    updateProject,
+    deleteProject
 }

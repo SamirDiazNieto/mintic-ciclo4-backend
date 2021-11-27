@@ -35,6 +35,7 @@ const projectType = gql`
             description: String
             topic: String
         ):Project
+        deleteProject(_id:ID!):Project
     }
 
 `;

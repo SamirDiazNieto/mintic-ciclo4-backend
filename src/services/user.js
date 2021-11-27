@@ -42,11 +42,11 @@ deleteUser= async(userId)=>{
     }
         )
 }
-
 module.exports = {
     createUser,
     getUsers,
     getUserById,
     updateUser,
-    UpdateProject, deleteUser
+    UpdateProject,
+    deleteUser
 }
