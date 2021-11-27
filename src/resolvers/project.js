@@ -19,6 +19,10 @@ const projectResolvers = {
         updateProject: async (parent, args) => {
             let project = await projectService.updateProject(args._id, args)
             return project
+        },
+        deleteProject: async (parent, args)=>{
+            let project= await projectService.deleteProject(args._id)
+            return project
         }
     }
 }
