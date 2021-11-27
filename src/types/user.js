@@ -8,6 +8,7 @@ const userType = gql`
         phone: String
         email: String!
         password: String!
+        tipoUsuario: String
         estado: String
         projects:[Project]
     }
@@ -31,6 +32,7 @@ const userType = gql`
             email: String!
             password: String!
             estado: String
+            tipoUsuario: String
         ): User
         updateUser(
             _id: ID!
@@ -40,6 +42,7 @@ const userType = gql`
             email: String!
             password: String!
             estado: String
+            tipoUsuario: String
         ): User
         deleteUser(_id:ID!):User
     }
