@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Project = require('./project');
-const Student = require('./user');
+// const Project = require('./project');
+// const Student = require('./user');
 
 const advanceSchema = new Schema({
 	project: {
 		type: Schema.Types.ObjectId,
-		ref: Project,
+		ref: 'Project',
 	},
 	student: {
 		type: Schema.Types.ObjectId,
-		ref: Student,
+		ref: 'Student',
 	},
 	date: {
 		type: Schema.Types.Date,
