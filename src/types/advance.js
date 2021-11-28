@@ -5,7 +5,7 @@ const advanceType = gql`
 		_id: ID!
 		project: Project
 		student: User
-		date: Date
+		date: String
 		description: String
 		comments: [String]
 	}
@@ -31,8 +31,9 @@ const advanceType = gql`
 		getAdvanceById(_id: String): Advance
 	}
 	type Mutation {
-		createAdvance(project: ID!, student: ID!, date: Date, description: String, comments: [String]): Advance
-		updateAdvance(_id: ID!, description: String, comments: [String]): Advance
+		createAdvance(project: ID!, student: ID!, date: String, description: String, comments: String): Advance
+
+		updateAdvance(_id: ID!, description: String, comments: String): Advance
 	}
 `;
 module.exports = { advanceType };

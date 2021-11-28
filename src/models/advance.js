@@ -13,11 +13,16 @@ const advanceSchema = new Schema({
 		ref: 'Student',
 	},
 	date: {
-		type: Date,
-		default: Date.now,
+		type: String,
 	},
+	// date: {
+	// 	type: Date,
+	// 	default: Date.now,
+	// },
 	description: String,
-	comments: [{ Type: String }],
+	comments: {
+		type: String,
+	},
 });
 
 module.exports = mongoose.model('Advance', advanceSchema);
