@@ -11,12 +11,12 @@ const getAdvances = async () => {
 	return advances;
 };
 
-const getAdvancesById = async (advanceId) => {
+const getAdvanceById = async (advanceId) => {
 	let advances = await Advance.findById(advanceId).exec();
 	return advances;
 };
 
-updateAdvance = async (advanceId, newAdvance) => {
+const updateAdvance = async (advanceId, newAdvance) => {
 	let updateAdvance = await Inscription.findByIdAndUpdate(advanceId, newAdvance, { new: true });
 	return updateAdvance;
 };
@@ -24,6 +24,6 @@ updateAdvance = async (advanceId, newAdvance) => {
 module.exports = {
 	createAdvance,
 	getAdvances,
-	getAdvancesById,
+	getAdvanceById,
 	updateAdvance,
 };
