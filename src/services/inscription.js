@@ -2,10 +2,23 @@ const Inscription = require('../models/inscription')
 
 createInscription = async (inscription) => {
     let inscriptionInstance = new Inscription(inscription)
-    inscription = await inscriptionInstance.save()
-
+    console.log(inscription.project)
+    let busqueda  = await Inscription.findOne({"project":inscription.project,"student":inscription.student })
+    console.log("busqueda")
+    console.log(busqueda)
+    if (!busqueda){
+        inscription = await inscriptionInstance.save()
+        return "Inscripcion Exitosa"
+    }
+    else{
+        if (busqueda.dateOut){
+            inscription = await inscriptionInstance.save()
+            return "inscription"
+        }
+        return "Inscripción ya existente"
     
-    return inscription
+    }
+    
 }
 
 
@@ -19,6 +32,7 @@ getInscriptionById = async (inscriptionId) => {
 }
 
 updateInscription = async (inscriptionId, inscription) => {
+    
     let newInscription = await Inscription.findByIdAndUpdate(inscriptionId, inscription, { new: true })
     return newInscription
 }
