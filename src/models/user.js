@@ -4,7 +4,7 @@ const Project = require('./project')
 
 const UserSchema = new Schema({
 
-    identificacion: {
+    identification: {
         type: String,
         required: true
     },
@@ -16,12 +16,12 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    tipoUsuario: {
+    typeUser: {
         type: String,
-        enum: ["Estudiante", "Lider", "Administrado", "Pendiente"],
-        default:'Pendiente'
+        enum: ["Estudiante", "Lider", "Administrado"],
+        default:'Estudiante'
     },
-    estado: {
+    state: {
         type: String,
         enum: ["Pendiente", "Autorizado", "No Autorizado"],
         default:'Pendiente'
