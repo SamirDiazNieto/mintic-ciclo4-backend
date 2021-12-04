@@ -3,15 +3,10 @@ const Schema = mongoose.Schema
 const Project = require('./project')
 
 const UserSchema = new Schema({
-    name: {
+
+    identificacion: {
         type: String,
-        required: false
-    },
-    lastName: {
-        type: String
-    },
-    phone: {
-        type: String
+        required: true
     },
     email:{
         type: String,
