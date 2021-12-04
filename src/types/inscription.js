@@ -65,4 +65,5 @@ scalar Date
 
 
 `;
+
 module.exports = { inscriptionType }
