@@ -3,11 +3,11 @@ const { gql } = require("apollo-server-express")
 const userType = gql`
     type User{
         _id: ID!
-        identificacion: String!
+        identification: String!
         email: String!
         password: String!
-        tipoUsuario: String
-        estado: String
+        typeUser: String
+        state: String
         projects:[Project]
     }
     type Project{
@@ -24,19 +24,19 @@ const userType = gql`
     }
     type Mutation {
         createUser(
-            identificacion: String!
+            identification: String!
             email: String!
             password: String!
-            estado: String
-            tipoUsuario: String
+            state: String
+            typeUser: String
         ): User
         updateUser(
             _id: ID!
-            identificacion: String!
+            identification: String!
             email: String!
             password: String!
-            estado: String
-            tipoUsuario: String
+            state: String
+            typeUser: String
         ): User
         deleteUser(_id:ID!):User
     }
