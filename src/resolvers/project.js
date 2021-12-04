@@ -9,7 +9,11 @@ const projectResolvers = {
         getProjectById: async (parent, args) => {
             let project = await projectService.getProjectById(args._id)
             return project
-        }
+        }, 
+        getProjectByOwner: async (parent, args) => {
+            let project = await projectService.getProjectByOwner(args.OwnerId)
+            return project
+        },
     },
     Mutation: {
         createProject: async (parent, args) => {
@@ -23,7 +27,15 @@ const projectResolvers = {
         deleteProject: async (parent, args)=>{
             let project= await projectService.deleteProject(args._id)
             return project
-        }
+        },        
+        changePhaseProject:  async (parent, args)=>{
+            let project= await projectService.changePhaseProject(args.projectId, args.newPhase)
+            return project
+        },       
+        changeStateProject :  async (parent, args)=>{
+            let project= await projectService.changeStateProject(args.projectId, args.newState)
+            return project
+        },       
     }
 }
 
