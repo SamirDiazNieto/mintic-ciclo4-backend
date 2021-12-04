@@ -18,8 +18,8 @@ const UserSchema = new Schema({
     },
     tipoUsuario: {
         type: String,
-        enum: ["Estudiante", "Lider", "Administrado", "Pendiente"],
-        default:'Pendiente'
+        enum: ["Estudiante", "Lider", "Administrado"],
+        default:'Estudiante'
     },
     estado: {
         type: String,
