@@ -3,39 +3,65 @@ const { gql } = require("apollo-server-express")
 const projectType = gql`
     type User{
         _id: ID!
-        identificacion: String!
+        identification: String!
         email: String!
         password: String!
-        tipoUsuario: String
-        estado: String
+        typeUser: String
+        state: String
         projects:[Project]
     }
     type Project{
         _id: ID!
         name: String
-        description: String
-        topic: String
+        generalOjective: String
+        especificOjectives: [String]
+        budget: Int
+        dateStart: Date
+        dateEnd: Date
+        phase: String
+        state: Boolean
         owner: ID
     }
     type Query{
         getProjects:[Project]
         getProjectById(_id:String):Project
+        getProjectByOwner(OwnerId:String):[Project]
     }
 
     type Mutation{
         createProject(
             name: String
-            description: String
-            topic: String
+            generalOjective: String
+            especificOjectives: [String]
+            budget: Int
+            dateStart: Date
+            dateEnd: Date
+            phase: String
+            state: Boolean
             owner: ID
         ): Project
         updateProject(
             _id: ID!
             name: String
-            description: String
-            topic: String
+            generalOjective: String
+            especificOjectives: [String]
+            budget: Int
+            dateStart: Date
+            dateEnd: Date
+            phase: String
+            state: Boolean
+            owner: ID
         ):Project
         deleteProject(_id:ID!):Project
+        changePhaseProject(
+            projectId: ID
+            newPhase: String 
+        ):Project
+        changeStateProject(
+            projectId: ID
+            newState: Boolean 
+        ):Project
+
     }
 
 `;
