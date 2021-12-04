@@ -14,12 +14,15 @@ const inscriptionResolvers={
     Mutation: {
         createInscription: async (parent, args) => {
             let inscription = await inscriptionService.createInscription(args)
+            
             return inscription
         },
         updateInscription:async (parent, args) => {
             let inscription = await inscriptionService.updateInscription(args._id, args)
             return inscription
         }
+        
+
     }
 
 

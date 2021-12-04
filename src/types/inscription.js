@@ -1,22 +1,25 @@
 const { gql } = require("apollo-server-express")
 
 const inscriptionType = gql`
+scalar Date
 
     type Inscription{
         _id: ID!
         project: Project
         student: User
         state: String
-        dateRegister: String
-        dateOut: String
+        dateRegister: Date
+        dateOut: Date
+        #comment:[String]
+        
     }
     type User{
         _id: ID!
-        name: String
-        lastName: String
-        phone: String
+        identificacion: String!
         email: String!
         password: String!
+        tipoUsuario: String
+        estado: String
         projects:[Project]
     }
     type Project{
@@ -37,18 +40,30 @@ const inscriptionType = gql`
             student: ID!
             project: ID!     
             state: String
-            dateRegister: String
-            dateOut: String
-        ): Inscription
+            dateRegister: Date
+            dateOut: Date
+            #comment:[String]
+        ): String
         updateInscription(
             _id: ID!
             state: String
-            dateRegister: String
-            dateOut: String
-        ):Project
+            dateRegister: Date
+            dateOut: Date
+            #comment:[String]
+            
+            
+        ):Inscription
+        UpdateComment(
+            _id: ID!
+            #comment:[String]
+        ):Inscription
+        deleteInscription(_id:ID!):Inscription
+        deleteAllInscription:Inscription
+
     }
     
 
 
 `;
+
 module.exports = { inscriptionType }

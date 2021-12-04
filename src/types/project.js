@@ -3,11 +3,11 @@ const { gql } = require("apollo-server-express")
 const projectType = gql`
     type User{
         _id: ID!
-        name: String
-        lastName: String
-        phone: String
+        identificacion: String!
         email: String!
         password: String!
+        tipoUsuario: String
+        estado: String
         projects:[Project]
     }
     type Project{

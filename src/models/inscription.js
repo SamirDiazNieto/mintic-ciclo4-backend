@@ -13,13 +13,15 @@ const InscriptionSchema = new  Schema({
         ref: "User"
     },
     state:{
-        type: String
+        type: String,
+        enum: ["Pendiente", "Autorizado", "No Autorizado"],
+        default:'Pendiente'
     },
     dateRegister: {
-        type: String
+        type: Date
     },
     dateOut: {
-        type: String
+        type: Date
     }
 })
 
