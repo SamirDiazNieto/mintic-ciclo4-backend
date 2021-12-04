@@ -53,12 +53,12 @@ scalar Date
             
             
         ):Inscription
-        UpdateComment(
-            _id: ID!
+        #UpdateComment(
+        #    _id: ID!
             #comment:[String]
-        ):Inscription
+        #):Inscription
         deleteInscription(_id:ID!):Inscription
-        deleteAllInscription:Inscription
+        #deleteAllInscription:Inscription
 
     }
     

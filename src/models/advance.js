@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const Project = require('./project');
-// const Student = require('./user');
+const Project = require('./project');
+const User = require('./user');
 
 const advanceSchema = new Schema({
 	project: {
@@ -10,10 +10,10 @@ const advanceSchema = new Schema({
 	},
 	student: {
 		type: Schema.Types.ObjectId,
-		ref: 'Student',
+		ref: 'User',
 	},
 	date: {
-		type: String,
+		type: Date,
 	},
 	// date: {
 	// 	type: Date,
@@ -21,7 +21,7 @@ const advanceSchema = new Schema({
 	// },
 	description: String,
 	comments: {
-		type: String,
+		type: [String],
 	},
 });
 

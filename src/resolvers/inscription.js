@@ -20,6 +20,10 @@ const inscriptionResolvers={
         updateInscription:async (parent, args) => {
             let inscription = await inscriptionService.updateInscription(args._id, args)
             return inscription
+        },
+        deleteInscription: async (parent, args)=>{
+            let inscription=await inscriptionService.deleteInscription(args._id)
+            return inscription
         }
         
 

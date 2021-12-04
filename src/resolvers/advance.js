@@ -20,6 +20,10 @@ const advanceResolvers = {
 			let advance = await advanceService.updateAdvance(args._id, args);
 			return advance;
 		},
+		updateComment: async (parent, args) => {
+			let advance = await advanceService.updateComment(args._id, args.comments);
+			return advance;
+		},
 	},
 };
 

@@ -17,13 +17,22 @@ const getAdvanceById = async (advanceId) => {
 };
 
 const updateAdvance = async (advanceId, newAdvance) => {
-	let updateAdvance = await Inscription.findByIdAndUpdate(advanceId, newAdvance, { new: true });
+	let updateAdvance = await Advance.findByIdAndUpdate(advanceId, newAdvance, { new: true });
 	return updateAdvance;
 };
-
+const updateComment = async(advanceId, comment)=>{
+	console.log(comment)
+    let advances = await Advance.findByIdAndUpdate(advanceId,{
+        $push:{
+            comments:comment
+        }
+    },{ new: true })
+    return advances
+}
 module.exports = {
 	createAdvance,
 	getAdvances,
 	getAdvanceById,
 	updateAdvance,
+	updateComment
 };
