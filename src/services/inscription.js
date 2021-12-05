@@ -27,7 +27,7 @@ getInscription = async () => {
 	return inscriptions;
 };
 getInscriptionById = async (inscriptionId) => {
-	let inscription = await Inscription.findById(projectId).exec();
+	let inscription = await Inscription.findById(inscriptionId).populate('student').populate('project').exec();
 	return inscription;
 };
 
@@ -49,19 +49,7 @@ deleteInscription= async (inscriptionId, inscription) => {
 }
     )
 }
-deleteUser= async(userId)=>{
-    await User.findByIdAndDelete(userId,{
-        function (err, docs) {
-            if (err){
-                console.log(err)
-            }
-            else{
-                console.log("Deleted : ", docs);
-            }
-        }
-    }
-        )
-}
+
 updateDateEndInscription = async(projectId)=>{
     await Inscription.updateMany({
         project: {
@@ -82,10 +70,12 @@ updateDateEndInscription = async(projectId)=>{
 }
 
 
+
 module.exports = {
 	getInscription,
 	createInscription,
 	updateInscription,
 	getInscriptionById,
-    updateDateEndInscription
+    updateDateEndInscription,
+    deleteInscription
 };
