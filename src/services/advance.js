@@ -1,6 +1,13 @@
 const Advance = require('../models/advance');
+const Project = require('./project');
 
 const createAdvance = async (newAdvance) => {
+	let busqueda  = await Advance.findOne({"project":newAdvance.project })
+	if (!busqueda){
+		
+		await Project.changePhaseProject(newAdvance.project, "En desarrollo")
+
+	}
 	let advanceInstance = new Advance(newAdvance);
 	let advance = await advanceInstance.save();
 	return advance;
@@ -12,7 +19,7 @@ const getAdvances = async () => {
 };
 
 const getAdvanceById = async (advanceId) => {
-	let advances = await Advance.findById(advanceId).exec();
+	let advances = await Advance.findById(advanceId).populate('student').populate('project').exec();
 	return advances;
 };
 
