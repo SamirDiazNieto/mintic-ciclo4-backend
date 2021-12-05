@@ -15,11 +15,11 @@ scalar Date
     }
     type User{
         _id: ID!
-        identificacion: String!
+        identification: String!
         email: String!
         password: String!
-        tipoUsuario: String
-        estado: String
+        typeUser: String
+        state: String
         projects:[Project]
     }
     type Project{

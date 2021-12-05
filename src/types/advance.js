@@ -10,15 +10,15 @@ scalar Date
 		description: String
 		comments: [String]
 	}
-	type User {
-		_id: ID!
-		name: String
-		lastName: String
-		phone: String
-		email: String!
-		password: String!
-		projects: [Project]
-	}
+    type User{
+        _id: ID!
+        identification: String!
+        email: String!
+        password: String!
+        typeUser: String
+        state: String
+        projects:[Project]
+    }
 	type Project {
 		_id: ID!
 		name: String
