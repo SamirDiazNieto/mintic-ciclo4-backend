@@ -32,9 +32,9 @@ const userType = gql`
         ): User
         updateUser(
             _id: ID!
-            identification: String!
-            email: String!
-            password: String!
+            identification: String
+            email: String
+            password: String
             state: String
             typeUser: String
         ): User
