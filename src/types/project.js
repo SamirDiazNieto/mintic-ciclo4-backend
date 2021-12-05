@@ -13,8 +13,8 @@ const projectType = gql`
     type Project{
         _id: ID!
         name: String
-        generalOjective: String
-        especificOjectives: [String]
+        generalObjective: String
+        especificObjectives: [String]
         budget: Int
         dateStart: Date
         dateEnd: Date
@@ -31,8 +31,8 @@ const projectType = gql`
     type Mutation{
         createProject(
             name: String
-            generalOjective: String
-            especificOjectives: [String]
+            generalObjective: String
+            especificObjectives: [String]
             budget: Int
             dateStart: Date
             dateEnd: Date
@@ -43,8 +43,8 @@ const projectType = gql`
         updateProject(
             _id: ID!
             name: String
-            generalOjective: String
-            especificOjectives: [String]
+            generalObjective: String
+            especificObjectives: [String]
             budget: Int
             dateStart: Date
             dateEnd: Date

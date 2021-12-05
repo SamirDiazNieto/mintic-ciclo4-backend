@@ -62,7 +62,24 @@ deleteUser= async(userId)=>{
     }
         )
 }
-
+updateDateEndInscription = async(projectId)=>{
+    await Inscription.updateMany({
+        project: {
+            _id: projectId
+        }
+            ,dateOut: null,
+            state: "Aceptado"
+        },
+        { dateOut: new Date() }, 
+        function (err, docs) {
+            if (err) {
+                console.log(err)
+            }
+            else {
+                console.log("Updated Docs : ", docs);
+            }
+        })
+}
 
 
 module.exports = {
@@ -70,4 +87,5 @@ module.exports = {
 	createInscription,
 	updateInscription,
 	getInscriptionById,
+    updateDateEndInscription
 };

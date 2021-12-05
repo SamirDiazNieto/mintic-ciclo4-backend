@@ -7,10 +7,10 @@ const ProjectSchema = new  Schema({
     name:{
         type: String
     },
-    generalOjective:{
+    generalObjective:{
         type: String
     },
-    especificOjectives:[{
+    especificObjectives:[{
         type: String
     }],
     budget:{
