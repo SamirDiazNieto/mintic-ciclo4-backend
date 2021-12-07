@@ -13,6 +13,7 @@ scalar Date
     type User{
         _id: ID!
         identification: String!
+		nameUser: String!
         email: String!
         password: String!
         typeUser: String
