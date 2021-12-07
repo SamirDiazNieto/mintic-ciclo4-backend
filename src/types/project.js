@@ -4,6 +4,7 @@ const projectType = gql`
     type User{
         _id: ID!
         identification: String!
+        nameUser: String!
         email: String!
         password: String!
         typeUser: String
@@ -31,8 +32,8 @@ const projectType = gql`
     type Mutation{
         createProject(
             name: String
-            generalOjective: String
-            especificOjectives: [String]
+            generalObjective: String
+            especificObjectives: [String]
             budget: Int
             dateStart: Date
             dateEnd: Date
