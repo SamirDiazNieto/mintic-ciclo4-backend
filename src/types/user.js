@@ -4,6 +4,7 @@ const userType = gql`
     type User{
         _id: ID!
         identification: String!
+        nameUser: String!
         email: String!
         password: String!
         typeUser: String
@@ -25,6 +26,7 @@ const userType = gql`
     type Mutation {
         createUser(
             identification: String!
+            nameUser: String!
             email: String!
             password: String!
             state: String
@@ -32,9 +34,10 @@ const userType = gql`
         ): User
         updateUser(
             _id: ID!
-            identification: String!
-            email: String!
-            password: String!
+            identification: String
+            nameUser: String!
+            email: String
+            password: String
             state: String
             typeUser: String
         ): User
