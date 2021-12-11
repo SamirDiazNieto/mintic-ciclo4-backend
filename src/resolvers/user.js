@@ -11,6 +11,11 @@ const userResolvers ={
         getUserById: async (parent,args)=>{
             let user = await userService.getUserById(args._id)
             return user
+        },
+        getUserByEmail: async (parent,args)=>{
+            let user = await userService.getUserByEmail(args.email)
+            console.log(user)
+            return user
         }
     },
     Mutation:{

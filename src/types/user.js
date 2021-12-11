@@ -22,6 +22,7 @@ const userType = gql`
     type Query {
         getUsers: [User]
         getUserById(_id:String): User
+        getUserByEmail(email:String): User
     }
     type Mutation {
         createUser(
