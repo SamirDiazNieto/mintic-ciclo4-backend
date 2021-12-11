@@ -49,11 +49,18 @@ deleteUser= async(userId)=>{
     }
         )
 }
+getUserByEmail = async(Email) =>{
+    console.log(Email)
+    let user = await User.findOne({email:Email}).populate("projects")
+    console.log(user)
+    return user
+}
 module.exports = {
     createUser,
     getUsers,
     getUserById,
     updateUser,
     UpdateProject,
-    deleteUser
+    deleteUser,
+    getUserByEmail
 }

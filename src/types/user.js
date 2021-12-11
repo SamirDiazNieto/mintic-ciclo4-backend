@@ -6,8 +6,8 @@ const userType = gql`
         identification: String!
         nameUser: String!
         email: String!
-        password: String!
-        typeUser: String
+        password: String
+        typeUser: String!
         state: String
         projects:[Project]
     }
@@ -22,20 +22,21 @@ const userType = gql`
     type Query {
         getUsers: [User]
         getUserById(_id:String): User
+        getUserByEmail(email:String): User
     }
     type Mutation {
         createUser(
             identification: String!
             nameUser: String!
             email: String!
-            password: String!
+            password: String
             state: String
-            typeUser: String
+            typeUser: String!
         ): User
         updateUser(
             _id: ID!
             identification: String
-            nameUser: String!
+            nameUser: String
             email: String
             password: String
             state: String
