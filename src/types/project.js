@@ -6,7 +6,6 @@ const projectType = gql`
         identification: String!
         nameUser: String!
         email: String!
-        password: String
         typeUser: String!
         state: String
         projects:[Project]

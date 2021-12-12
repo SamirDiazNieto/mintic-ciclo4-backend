@@ -16,10 +16,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    password: {
-        type: String,
-        required: false
-    },
+    // password: {
+    //     type: String,
+    //     required: false
+    // },
     typeUser: {
         type: String,
         enum: ["Estudiante", "Lider", "Administrador"],

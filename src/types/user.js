@@ -6,7 +6,6 @@ const userType = gql`
         identification: String!
         nameUser: String!
         email: String!
-        password: String
         typeUser: String!
         state: String
         projects:[Project]
@@ -29,7 +28,6 @@ const userType = gql`
             identification: String!
             nameUser: String!
             email: String!
-            password: String
             state: String
             typeUser: String!
         ): User
@@ -38,7 +36,6 @@ const userType = gql`
             identification: String
             nameUser: String
             email: String
-            password: String
             state: String
             typeUser: String
         ): User
