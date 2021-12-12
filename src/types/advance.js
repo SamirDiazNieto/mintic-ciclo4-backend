@@ -33,11 +33,10 @@ scalar Date
 	}
 	type Mutation {
 		createAdvance(project: ID!,
-		 student: ID!, 
-		 date: Date, 
-		 description: String, 
-		 comments: String): Advance
-
+		student: ID!, 
+		date: Date, 
+		description: String, 
+		comments: String): Advance
 		updateAdvance(_id: ID!, 
 		description: String, 
 		comments: String): Advance

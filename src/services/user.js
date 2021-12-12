@@ -15,6 +15,13 @@ getUserById = async(userId) =>{
     let user = await User.findById(userId).populate("projects")
     return user
 }
+getUserByEmail = async(Email) =>{
+    console.log(Email)
+    let user = await User.findOne({email:Email}).populate("projects")
+    console.log(user)
+    return user
+}
+
 
 updateUser = async (userId, user)=>{
     let new_user = User.findByIdAndUpdate(userId, user,{new:true})
