@@ -32,7 +32,9 @@ getInscriptionById = async (inscriptionId) => {
 };
 
 updateInscription = async (inscriptionId, inscription) => {
-    
+    if(inscription.state=="Aceptado"){
+        inscription.dateRegister=new Date();
+    }
     let newInscription = await Inscription.findByIdAndUpdate(inscriptionId, inscription, { new: true })
     return newInscription
 }
@@ -79,3 +81,6 @@ module.exports = {
     updateDateEndInscription,
     deleteInscription
 };
+
+
+//hola

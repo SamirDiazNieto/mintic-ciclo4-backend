@@ -15,8 +15,8 @@ scalar Date
         identification: String!
 		nameUser: String!
         email: String!
-        password: String!
-        typeUser: String
+        password: String
+        typeUser: String!
         state: String
         projects:[Project]
     }
