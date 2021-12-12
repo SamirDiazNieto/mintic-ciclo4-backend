@@ -18,12 +18,13 @@ const UserSchema = new Schema({
     },
     password: {
         type: String,
-        required: true
+        required: false
     },
     typeUser: {
         type: String,
         enum: ["Estudiante", "Lider", "Administrador"],
-        default:'Estudiante'
+        default:'Estudiante',
+        required: true
     },
     state: {
         type: String,
