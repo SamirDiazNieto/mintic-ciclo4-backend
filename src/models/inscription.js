@@ -14,7 +14,7 @@ const InscriptionSchema = new  Schema({
     },
     state:{
         type: String,
-        enum: ["Pendiente", "Autorizado", "No Autorizado"],
+        enum: ["Pendiente", "Aceptado", "Rechazado"],
         default:'Pendiente'
     },
     dateRegister: {

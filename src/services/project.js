@@ -1,5 +1,6 @@
 const Project = require('../models/project')
 const userService = require("./user")
+const inscriptionService = require("./inscription")
 
 createProject = async (project) => {
     let projectInstance = new Project(project)
@@ -47,7 +48,8 @@ changePhaseProject = async (projectId, newPhase) => {
     if(newPhase =="Terminado"){
         actualState = false;
         actualDateEnd =  new Date();
-        // la fecha de egreso en las inscripciones que están en estado “Aceptado” y que cuya fecha de    egreso está vacía, se debe guardar la fecha en la que se hizo la inactivación del proyecto.
+        //la fecha de egreso en las inscripciones que están en estado “Aceptado” y que cuya fecha de egreso está vacía, se debe guardar la fecha en la que se hizo la inactivación del proyecto.
+        inscriptionService.updateDateEndInscription(projectId)
     }
     let project = await Project.findByIdAndUpdate(projectId, {
         phase: newPhase,
