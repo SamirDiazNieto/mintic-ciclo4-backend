@@ -2,11 +2,9 @@ const Advance = require('../models/advance');
 const Project = require('./project');
 
 const createAdvance = async (newAdvance) => {
-	let busqueda  = await Advance.findOne({"project":newAdvance.project })
-	if (!busqueda){
-		
-		await Project.changePhaseProject(newAdvance.project, "En desarrollo")
-
+	let busqueda = await Advance.findOne({ project: newAdvance.project });
+	if (!busqueda) {
+		await Project.changePhaseProject(newAdvance.project, 'En desarrollo');
 	}
 	let advanceInstance = new Advance(newAdvance);
 	let advance = await advanceInstance.save();
@@ -27,19 +25,37 @@ const updateAdvance = async (advanceId, newAdvance) => {
 	let updateAdvance = await Advance.findByIdAndUpdate(advanceId, newAdvance, { new: true });
 	return updateAdvance;
 };
-const updateComment = async(advanceId, comment)=>{
-	console.log(comment)
-    let advances = await Advance.findByIdAndUpdate(advanceId,{
-        $push:{
-            comments:comment
-        }
-    },{ new: true })
-    return advances
-}
+const updateComment = async (advanceId, comment) => {
+	console.log(comment);
+	let advances = await Advance.findByIdAndUpdate(
+		advanceId,
+		{
+			$push: {
+				comments: comment,
+			},
+		},
+		{ new: true }
+	);
+	return advances;
+};
+
+const deleteAdvance = async (advanceID) => {
+	await Advance.findByIdAndDelete(advanceID, {
+		function(err, docs) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log('Deleted : ', docs);
+			}
+		},
+	});
+};
+
 module.exports = {
 	createAdvance,
 	getAdvances,
 	getAdvanceById,
 	updateAdvance,
-	updateComment
+	updateComment,
+	deleteAdvance,
 };

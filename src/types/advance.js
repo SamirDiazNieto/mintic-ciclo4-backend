@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const advanceType = gql`
-scalar Date
+	scalar Date
 	type Advance {
 		_id: ID!
 		project: Project
@@ -10,15 +10,15 @@ scalar Date
 		description: String
 		comments: [String]
 	}
-    type User{
-        _id: ID!
-        identification: String!
+	type User {
+		_id: ID!
+		identification: String!
 		nameUser: String!
-        email: String!
-        typeUser: String!
-        state: String
-        projects:[Project]
-    }
+		email: String!
+		typeUser: String!
+		state: String
+		projects: [Project]
+	}
 	type Project {
 		_id: ID!
 		name: String
@@ -32,19 +32,12 @@ scalar Date
 		getAdvanceById(_id: String): Advance
 	}
 	type Mutation {
-		createAdvance(project: ID!,
-		student: ID!, 
-		date: Date, 
-		description: String, 
-		comments: String): Advance
-		updateAdvance(_id: ID!, 
-		description: String, 
-		comments: String): Advance
+		createAdvance(project: ID!, student: ID!, date: Date, description: String, comments: String): Advance
+		updateAdvance(_id: ID!, description: String, comments: String): Advance
 
-		updateComment(
-            _id: ID!,
-            comments:[String]
-        ):Advance
+		updateComment(_id: ID!, comments: [String]): Advance
+
+		deleteAdvance(_id: ID!): Advance
 	}
 `;
 module.exports = { advanceType };

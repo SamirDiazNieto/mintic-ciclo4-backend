@@ -14,11 +14,8 @@ const advanceSchema = new Schema({
 	},
 	date: {
 		type: Date,
+		default: Date.now,
 	},
-	// date: {
-	// 	type: Date,
-	// 	default: Date.now,
-	// },
 	description: String,
 	comments: {
 		type: [String],
