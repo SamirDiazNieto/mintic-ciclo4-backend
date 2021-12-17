@@ -69,6 +69,9 @@ changeStateProject = async (projectId, newState) => {
         actualPhase = "Iniciado";   
         actualDateStart = new Date(); 
     }
+    if(!newState){
+        inscriptionService.updateDateEndInscription(projectId)
+    }
     let project = await Project.findByIdAndUpdate(projectId, {
         phase: actualPhase,
         state : newState,
