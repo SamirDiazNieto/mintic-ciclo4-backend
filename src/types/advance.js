@@ -19,13 +19,18 @@ scalar Date
         state: String
         projects:[Project]
     }
-	type Project {
-		_id: ID!
-		name: String
-		description: String
-		topic: String
-		owner: ID
-	}
+	type Project{
+        _id: ID!
+        name: String
+        generalObjective: String
+        especificObjectives: [String]
+        budget: Int
+        dateStart: Date
+        dateEnd: Date
+        phase: String
+        state: Boolean
+        owner: User
+    }
 
 	type Query {
 		getAdvances: [Advance]

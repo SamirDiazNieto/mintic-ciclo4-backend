@@ -20,7 +20,7 @@ const projectType = gql`
         dateEnd: Date
         phase: String
         state: Boolean
-        owner: ID
+        owner: User
     }
     type Query{
         getProjects:[Project]

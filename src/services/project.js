@@ -10,7 +10,7 @@ createProject = async (project) => {
 }
 
 getProjects = async () => {
-    let projects = await Project.find({})
+    let projects = await Project.find({}).populate('owner')
     return projects
 }
 

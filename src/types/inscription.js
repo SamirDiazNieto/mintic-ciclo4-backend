@@ -25,11 +25,15 @@ scalar Date
     type Project{
         _id: ID!
         name: String
-        description: String
-        topic: String
-        owner: ID
+        generalObjective: String
+        especificObjectives: [String]
+        budget: Int
+        dateStart: Date
+        dateEnd: Date
+        phase: String
+        state: Boolean
+        owner: User
     }
-
     type Query{
         getInscription:[Inscription]
         getInscriptionById(_id:String):Inscription

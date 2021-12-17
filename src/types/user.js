@@ -13,9 +13,14 @@ const userType = gql`
     type Project{
         _id: ID!
         name: String
-        description: String
-        topic: String
-        owner: ID
+        generalObjective: String
+        especificObjectives: [String]
+        budget: Int
+        dateStart: Date
+        dateEnd: Date
+        phase: String
+        state: Boolean
+        owner: User
     }
 
     type Query {

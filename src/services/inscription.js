@@ -23,7 +23,7 @@ createInscription = async (inscription) => {
 
 
 getInscription = async () => {
-	let inscriptions = await Inscription.find({}).populate('student').populate('project');
+	let inscriptions = await Inscription.find({}).populate('student').populate('project').populate('project.owner');
 	return inscriptions;
 };
 getInscriptionById = async (inscriptionId) => {
