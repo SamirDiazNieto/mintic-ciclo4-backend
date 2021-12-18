@@ -36,10 +36,23 @@ const updateComment = async(advanceId, comment)=>{
     },{ new: true })
     return advances
 }
+deleteAdvance= async (advanceId, advance) => {
+    await Advance.findByIdAndDelete(advanceId, {function (err, docs) {
+        if (err){
+            console.log(err)
+        }
+        else{
+            console.log("Deleted : ", docs);
+        }
+    }
+}
+    )
+}
 module.exports = {
 	createAdvance,
 	getAdvances,
 	getAdvanceById,
 	updateAdvance,
-	updateComment
+	updateComment,
+	deleteAdvance
 };

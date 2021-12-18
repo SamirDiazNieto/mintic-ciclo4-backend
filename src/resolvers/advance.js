@@ -24,6 +24,10 @@ const advanceResolvers = {
 			let advance = await advanceService.updateComment(args._id, args.comments);
 			return advance;
 		},
+		deleteAdvance: async (parent, args)=>{
+            let advance=await advanceService.deleteAdvance(args._id)
+            return advance
+        }
 	},
 };
 

@@ -50,6 +50,7 @@ scalar Date
             _id: ID!,
             comments:[String]
         ):Advance
+		deleteAdvance(_id: ID!): Advance
 	}
 `;
 module.exports = { advanceType };
