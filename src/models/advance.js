@@ -12,13 +12,13 @@ const advanceSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 	},
-	date: {
-		type: Date,
-	},
 	// date: {
 	// 	type: Date,
-	// 	default: Date.now,
 	// },
+	date: {
+		type: Date,
+		default: Date.now,
+	},
 	description: String,
 	comments: {
 		type: [String],
